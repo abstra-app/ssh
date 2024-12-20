@@ -122,7 +122,7 @@ func (h *ForwardedTCPHandler) HandleSSHRequest(ctx Context, srv *Server, req *go
 			log.Printf("+ Bind at %s", addr)
 		}
 
-		if srv.ReversePortForwardingAddressCallback == nil || !srv.ReversePortForwardingAddressCallback(ctx, addr) {
+		if srv.ReversePortForwardingAddressCallback != nil && !srv.ReversePortForwardingAddressCallback(ctx, addr) {
 			ln.Close()
 			return false, []byte("port forwarding is disabled")
 		}
