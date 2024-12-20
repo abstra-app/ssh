@@ -39,16 +39,17 @@ type Server struct {
 	Version     string   // server version to be sent before the initial handshake
 	Banner      string   // server banner
 
-	BannerHandler                 BannerHandler                 // server banner handler, overrides Banner
-	KeyboardInteractiveHandler    KeyboardInteractiveHandler    // keyboard-interactive authentication handler
-	PasswordHandler               PasswordHandler               // password authentication handler
-	PublicKeyHandler              PublicKeyHandler              // public key authentication handler
-	PtyCallback                   PtyCallback                   // callback for allowing PTY sessions, allows all if nil
-	ConnCallback                  ConnCallback                  // optional callback for wrapping net.Conn before handling
-	LocalPortForwardingCallback   LocalPortForwardingCallback   // callback for allowing local port forwarding, denies all if nil
-	ReversePortForwardingCallback ReversePortForwardingCallback // callback for allowing reverse port forwarding, denies all if nil
-	ServerConfigCallback          ServerConfigCallback          // callback for configuring detailed SSH options
-	SessionRequestCallback        SessionRequestCallback        // callback for allowing or denying SSH sessions
+	BannerHandler                        BannerHandler                        // server banner handler, overrides Banner
+	KeyboardInteractiveHandler           KeyboardInteractiveHandler           // keyboard-interactive authentication handler
+	PasswordHandler                      PasswordHandler                      // password authentication handler
+	PublicKeyHandler                     PublicKeyHandler                     // public key authentication handler
+	PtyCallback                          PtyCallback                          // callback for allowing PTY sessions, allows all if nil
+	ConnCallback                         ConnCallback                         // optional callback for wrapping net.Conn before handling
+	LocalPortForwardingCallback          LocalPortForwardingCallback          // callback for allowing local port forwarding, denies all if nil
+	ReversePortForwardingCallback        ReversePortForwardingCallback        // callback for allowing reverse port forwarding, denies all if nil
+	ReversePortForwardingAddressCallback ReversePortForwardingAddressCallback // callback for configuring reverse port forwarding with actual address
+	ServerConfigCallback                 ServerConfigCallback                 // callback for configuring detailed SSH options
+	SessionRequestCallback               SessionRequestCallback               // callback for allowing or denying SSH sessions
 
 	ConnectionFailedCallback ConnectionFailedCallback // callback to report connection failures
 
