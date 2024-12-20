@@ -1,4 +1,4 @@
-module github.com/gliderlabs/ssh
+module github.com/abstra-app/ssh
 
 go 1.20
 

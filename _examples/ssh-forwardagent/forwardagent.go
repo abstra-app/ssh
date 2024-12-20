@@ -5,7 +5,7 @@ import (
 	"log"
 	"os/exec"
 
-	"github.com/gliderlabs/ssh"
+	"github.com/abstra-app/ssh"
 )
 
 func main() {

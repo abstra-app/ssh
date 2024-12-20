@@ -4,7 +4,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/gliderlabs/ssh"
+	"github.com/abstra-app/ssh"
 )
 
 func ExampleListenAndServe() {
